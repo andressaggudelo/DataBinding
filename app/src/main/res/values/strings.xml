@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Questions</string>
+    <string name="whats_ypur_name">What is your name?</string>
+    <string name="answer_text">Answer here</string>
+    <string name="submit_button">Submit</string>
+    <string name="whats_your_last_name">What is your last name?</string>
+    <string name="whats_your_age">What is your age?</string>
+</resources>

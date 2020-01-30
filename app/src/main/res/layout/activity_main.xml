@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data_var"
+            type="com.andressaggudelo.questions.MyData" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/whats_ypur_name"
+            style="@style/BasicStyle" />
+
+        <TextView
+            android:id="@+id/lastname_text"
+            style="@style/BasicStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/whats_your_last_name"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/age_text"
+            style="@style/BasicStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/whats_your_age"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/answer_edit"
+            android:inputType="textPersonName"
+            android:hint="@string/answer_text"
+            style="@style/BasicStyle" />
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/submit_button" />
+
+        <TextView
+            android:id="@+id/answer_text"
+            style="@style/BasicStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={data_var.res}"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</layout>
