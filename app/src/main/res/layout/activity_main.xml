@@ -19,7 +19,7 @@
             android:id="@+id/name_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/whats_ypur_name"
+            android:text="@string/what_is_your_name"
             style="@style/BasicStyle" />
 
         <TextView
@@ -27,7 +27,7 @@
             style="@style/BasicStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/whats_your_last_name"
+            android:text="@string/what_is_your_last_name"
             android:visibility="gone" />
 
         <TextView
@@ -35,7 +35,7 @@
             style="@style/BasicStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/whats_your_age"
+            android:text="@string/what_is_your_age"
             android:visibility="gone" />
 
         <EditText

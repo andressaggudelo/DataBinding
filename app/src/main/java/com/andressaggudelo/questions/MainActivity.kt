@@ -13,12 +13,14 @@ import com.andressaggudelo.questions.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val data: MyData = MyData()
     private var count: Int = 0
     private var result = "Your name is "
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.dataVar = data
 
         binding.submitButton.setOnClickListener {
             count++
@@ -30,26 +32,36 @@ class MainActivity : AppCompatActivity() {
 
         when (count) {
             1 -> {
-                binding.nameText.visibility = View.GONE
-                result += binding.answerEdit.text.toString() + " "
-                binding.lastnameText.visibility = View.VISIBLE
-                binding.answerEdit.setText("")
+                binding.apply {
+                    nameText.visibility = View.GONE
+                    result += answerEdit.text.toString() + " "
+                    lastnameText.visibility = View.VISIBLE
+                    answerEdit.setText("")
+                }
+
             }
             2 -> {
-                binding.lastnameText.visibility = View.GONE
-                result += binding.answerEdit.text.toString() + ", and you're "
-                binding.ageText.visibility = View.VISIBLE
-                binding.answerEdit.setText("")
+                binding.apply {
+                    lastnameText.visibility = View.GONE
+                    result += answerEdit.text.toString() + ", and you're "
+                    ageText.visibility = View.VISIBLE
+                    answerEdit.setText("")
+                }
+
             }
             3 -> {
                 // Show it there
-                binding.ageText.visibility = View.GONE
-                binding.submitButton.visibility = View.GONE
-                binding.answerEdit.visibility = View.GONE
+                binding.apply {
+                    ageText.visibility = View.GONE
+                    submitButton.visibility = View.GONE
+                    answerEdit.visibility = View.GONE
 
-                result += binding.answerEdit.text.toString() + " years old"
-                binding.answerText.text = result
-                binding.answerText.visibility = View.VISIBLE
+                    result += answerEdit.text.toString() + " years old"
+                    data.res = result
+                    invalidateAll()
+                    answerText.visibility = View.VISIBLE
+                }
+
             }
         }
 
